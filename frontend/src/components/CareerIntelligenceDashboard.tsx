@@ -266,9 +266,9 @@ export const CareerIntelligenceDashboard: React.FC<DashboardProps> = ({
 
           {/* Table Header */}
           <div className="grid grid-cols-12 text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 pb-1">
-            <div className="col-span-7">Lesson</div>
-            <div className="col-span-3">Teacher</div>
-            <div className="col-span-2 text-right">Duration</div>
+            <div className="col-span-9 sm:col-span-7">Lesson</div>
+            <div className="hidden sm:block sm:col-span-3">Teacher</div>
+            <div className="col-span-3 sm:col-span-2 text-right">Duration</div>
           </div>
 
           {/* Table Rows matching Screenshot 1 */}
@@ -280,7 +280,7 @@ export const CareerIntelligenceDashboard: React.FC<DashboardProps> = ({
                 onClick={() => onNavigate('roadmap')}
               >
                 {/* Lesson Info */}
-                <div className="col-span-7 pr-2">
+                <div className="col-span-9 sm:col-span-7 pr-2">
                   <div className="text-xs font-bold text-[#18191E] group-hover:text-[#FF5B37] transition-colors line-clamp-1">
                     {lesson.index}. {lesson.title}
                   </div>
@@ -289,8 +289,8 @@ export const CareerIntelligenceDashboard: React.FC<DashboardProps> = ({
                   </div>
                 </div>
 
-                {/* Teacher / Instructor */}
-                <div className="col-span-3 flex items-center gap-2">
+                {/* Teacher / Instructor (hidden on phone screens, shown on tablet/desktop) */}
+                <div className="hidden sm:flex col-span-3 items-center gap-2">
                   <img
                     src={lesson.avatar}
                     alt={lesson.instructor}
@@ -302,7 +302,7 @@ export const CareerIntelligenceDashboard: React.FC<DashboardProps> = ({
                 </div>
 
                 {/* Duration */}
-                <div className="col-span-2 text-right text-xs font-bold text-[#18191E]">
+                <div className="col-span-3 sm:col-span-2 text-right text-xs font-bold text-[#18191E]">
                   {lesson.duration}
                 </div>
               </div>

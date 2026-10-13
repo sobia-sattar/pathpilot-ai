@@ -33,14 +33,24 @@
 /* Outer App Frame (Tablet/Workspace aesthetic) */
 .learnify-frame {
   background: #FFFFFF;
-  border-radius: 28px;
-  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  border-radius: 0px;
+  box-shadow: none;
 }
 
 @media (min-width: 640px) {
   .learnify-frame {
     border-radius: 36px;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(226, 232, 240, 0.8);
   }
+}
+
+/* Hide scrollbars for smooth mobile horizontal swiping */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Sidebar Dark Pill */

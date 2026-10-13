@@ -101,25 +101,25 @@ export const SkillGapAnalysis: React.FC<SkillGapAnalysisProps> = ({
         </div>
 
         {/* 3 Cute Pastel Summary Badges */}
-        <div className="flex items-center gap-2.5 flex-wrap">
-          <div className="px-3.5 py-2 rounded-2xl bg-[#FEE883]/60 border border-[#FFD233] text-center">
+        <div className="grid grid-cols-3 sm:flex items-center gap-2 sm:gap-2.5 w-full sm:w-auto">
+          <div className="px-2.5 sm:px-3.5 py-2 rounded-2xl bg-[#FEE883]/60 border border-[#FFD233] text-center">
             <div className="text-[10px] font-bold text-slate-600 uppercase tracking-wider">Readiness</div>
-            <div className="text-base font-black text-[#18191E]">{analysis.readiness_score}%</div>
+            <div className="text-sm sm:text-base font-black text-[#18191E]">{analysis.readiness_score}%</div>
           </div>
-          <div className="px-3.5 py-2 rounded-2xl bg-[#E0D4FD]/60 border border-[#C4B5FD] text-center">
+          <div className="px-2.5 sm:px-3.5 py-2 rounded-2xl bg-[#E0D4FD]/60 border border-[#C4B5FD] text-center">
             <div className="text-[10px] font-bold text-slate-600 uppercase tracking-wider">Mastered</div>
-            <div className="text-base font-black text-[#18191E]">{analysis.demonstrated_count}</div>
+            <div className="text-sm sm:text-base font-black text-[#18191E]">{analysis.demonstrated_count}</div>
           </div>
-          <div className="px-3.5 py-2 rounded-2xl bg-[#BAE6FD]/60 border border-[#7DD3FC] text-center">
-            <div className="text-[10px] font-bold text-slate-600 uppercase tracking-wider">Next to Learn</div>
-            <div className="text-base font-black text-[#18191E]">{analysis.missing_count + analysis.needs_improvement_count}</div>
+          <div className="px-2.5 sm:px-3.5 py-2 rounded-2xl bg-[#BAE6FD]/60 border border-[#7DD3FC] text-center">
+            <div className="text-[10px] font-bold text-slate-600 uppercase tracking-wider">Next Up</div>
+            <div className="text-sm sm:text-base font-black text-[#18191E]">{analysis.missing_count + analysis.needs_improvement_count}</div>
           </div>
         </div>
       </div>
 
       {/* 2. Cute Filter Pills & Search Bar */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3.5 rounded-3xl bg-white border border-[#E2E8F0] shadow-xs">
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3 sm:p-3.5 rounded-3xl bg-white border border-[#E2E8F0] shadow-xs">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 no-scrollbar">
           <button
             onClick={() => setFilter('all')}
             className={`px-3.5 py-1.5 rounded-full text-xs font-extrabold transition-all cursor-pointer ${

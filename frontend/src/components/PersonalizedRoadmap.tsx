@@ -956,36 +956,39 @@ print(f"Recall:    {rec * 100:.1f}%")`
             </div>
 
             {/* Subtopic Switcher Tabs */}
-            <div className="flex p-1.5 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-xs font-extrabold">
+            <div className="flex p-1 sm:p-1.5 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-xs font-extrabold gap-1">
               <button
                 onClick={() => setWorkshopSubtopic('lecture')}
-                className={`flex-1 py-2.5 rounded-xl transition-all cursor-pointer ${
+                className={`flex-1 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer text-center ${
                   workshopSubtopic === 'lecture'
                     ? 'bg-[#18191E] text-white shadow-xs'
                     : 'text-slate-600 hover:text-black'
                 }`}
               >
-                1. Concept Lecture & Theory
+                <span className="hidden sm:inline">1. Concept Lecture & Theory</span>
+                <span className="sm:hidden">1. Lecture</span>
               </button>
               <button
                 onClick={() => setWorkshopSubtopic('lab')}
-                className={`flex-1 py-2.5 rounded-xl transition-all cursor-pointer ${
+                className={`flex-1 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer text-center ${
                   workshopSubtopic === 'lab'
                     ? 'bg-[#18191E] text-white shadow-xs'
                     : 'text-slate-600 hover:text-black'
                 }`}
               >
-                2. Hands-on Code Sandbox
+                <span className="hidden sm:inline">2. Hands-on Code Sandbox</span>
+                <span className="sm:hidden">2. Sandbox</span>
               </button>
               <button
                 onClick={() => setWorkshopSubtopic('project')}
-                className={`flex-1 py-2.5 rounded-xl transition-all cursor-pointer ${
+                className={`flex-1 py-2 sm:py-2.5 rounded-xl transition-all cursor-pointer text-center ${
                   workshopSubtopic === 'project'
                     ? 'bg-[#18191E] text-white shadow-xs'
                     : 'text-slate-600 hover:text-black'
                 }`}
               >
-                3. Deliverable Project Spec
+                <span className="hidden sm:inline">3. Deliverable Project Spec</span>
+                <span className="sm:hidden">3. Project</span>
               </button>
             </div>
 

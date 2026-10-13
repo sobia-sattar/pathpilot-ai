@@ -186,18 +186,18 @@ export const CuteChatbot: React.FC<CuteChatbotProps> = ({
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
       {/* CUTE FLOATING LAUNCHER BUTTON: Only Cute Pip Mascot & 'Chat with Pip' */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="group relative flex items-center gap-3 px-4 py-2.5 rounded-full bg-[#18191E] hover:bg-black text-white shadow-2xl transition-all hover:scale-105 active:scale-95 border-2 border-white/20 cursor-pointer"
+          className="group relative flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-[#18191E] hover:bg-black text-white shadow-2xl transition-all hover:scale-105 active:scale-95 border-2 border-white/20 cursor-pointer"
           title="Chat with Pip"
         >
           {/* Animated Mascot Head */}
           <PipAvatar size="normal" />
 
-          <span className="text-xs sm:text-sm font-black text-white pr-2 tracking-tight">
+          <span className="text-xs sm:text-sm font-black text-white pr-1 sm:pr-2 tracking-tight">
             Chat with Pip
           </span>
         </button>
@@ -205,7 +205,7 @@ export const CuteChatbot: React.FC<CuteChatbotProps> = ({
 
       {/* 3. EXPANDED CUTE CHAT WINDOW (Ronas IT / Learnify Aesthetic) */}
       {isOpen && (
-        <div className="w-[340px] sm:w-[410px] h-[560px] max-h-[85vh] bg-white border border-[#CBD5E1] rounded-[32px] shadow-2xl flex flex-col overflow-hidden animate-scaleIn text-[#18191E]">
+        <div className="w-[calc(100vw-32px)] sm:w-[410px] max-w-[420px] h-[520px] max-h-[82vh] bg-white border border-[#CBD5E1] rounded-[28px] sm:rounded-[32px] shadow-2xl flex flex-col overflow-hidden animate-scaleIn text-[#18191E]">
           {/* Header */}
           <div className="px-5 py-3.5 bg-[#18191E] text-white flex items-center justify-between shadow-md">
             <div className="flex items-center gap-3">

@@ -128,6 +128,7 @@ export const TopHeader: React.FC<NavigationProps> = ({
     { id: 'overview', label: 'Home' },
     { id: 'dashboard', label: 'Tracks & Gaps' },
     { id: 'analyze', label: 'Analyze Resume' },
+    { id: 'gaps', label: 'Skill Gaps' },
     { id: 'roadmap', label: 'Roadmap' },
     { id: 'careers', label: 'Careers' },
     { id: 'progress', label: 'Analytics' },
@@ -135,22 +136,23 @@ export const TopHeader: React.FC<NavigationProps> = ({
   ];
 
   return (
-    <header className="w-full bg-white border-b border-[#F1F5F9] px-6 py-4">
-      <div className="flex items-center justify-between gap-4">
+    <header className="w-full bg-white border-b border-[#F1F5F9] px-3.5 sm:px-6 py-2.5 sm:py-4">
+      <div className="flex items-center justify-between gap-2 sm:gap-4">
         {/* Left: Brand Welcome greeting matching Learnify */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-xl bg-slate-100 text-slate-700"
+            className="md:hidden p-1.5 sm:p-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+            title="Toggle Menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
 
           <div>
-            <div className="text-sm sm:text-base font-normal text-slate-600 flex items-center gap-1.5">
-              <span>Welcome to</span>
-              <span className="font-extrabold text-[#18191E] tracking-tight text-lg sm:text-xl">
+            <div className="text-xs sm:text-base font-normal text-slate-600 flex items-center gap-1 sm:gap-1.5">
+              <span className="hidden xs:inline">Welcome to</span>
+              <span className="font-extrabold text-[#18191E] tracking-tight text-base sm:text-xl">
                 Path<span className="text-[#FF5B37]">Pilot</span>
               </span>
             </div>
@@ -175,7 +177,7 @@ export const TopHeader: React.FC<NavigationProps> = ({
         </div>
 
         {/* Right: Quick Team Link, Notifications, User Profile, Auth */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Quick Team Link */}
           <button
             onClick={() => setActiveTab('about')}
@@ -193,7 +195,7 @@ export const TopHeader: React.FC<NavigationProps> = ({
           {/* Notification Bell */}
           <button
             title="Notifications"
-            className="w-9 h-9 rounded-full bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-slate-600 hover:text-black transition-colors"
+            className="hidden sm:flex w-9 h-9 rounded-full bg-[#F8FAFC] border border-[#E2E8F0] items-center justify-center text-slate-600 hover:text-black transition-colors"
           >
             <Bell className="w-4 h-4" />
           </button>
@@ -201,7 +203,7 @@ export const TopHeader: React.FC<NavigationProps> = ({
           {/* User Profile matching Learnify right corner */}
           {currentUser ? (
             <div className="flex items-center gap-2 pl-1">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-200 to-orange-300 border-2 border-white shadow-sm flex items-center justify-center font-bold text-xs text-[#18191E] overflow-hidden">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-amber-200 to-orange-300 border-2 border-white shadow-sm flex items-center justify-center font-bold text-xs text-[#18191E] overflow-hidden">
                 <span className="uppercase">
                   {userName
                     .split(' ')
@@ -216,16 +218,16 @@ export const TopHeader: React.FC<NavigationProps> = ({
               </div>
             </div>
           ) : (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <button
                 onClick={() => onOpenLogin(false)}
-                className="px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-colors"
+                className="px-2.5 sm:px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] sm:text-xs font-semibold transition-colors"
               >
                 Sign In
               </button>
               <button
                 onClick={() => onOpenLogin(true)}
-                className="px-3.5 py-1.5 rounded-full bg-[#FF5B37] hover:bg-[#EE4B27] text-white text-xs font-semibold shadow-sm transition-colors"
+                className="px-2.5 sm:px-3.5 py-1.5 rounded-full bg-[#FF5B37] hover:bg-[#EE4B27] text-white text-[11px] sm:text-xs font-semibold shadow-sm transition-colors"
               >
                 Sign Up
               </button>

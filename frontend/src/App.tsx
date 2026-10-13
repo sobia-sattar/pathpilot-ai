@@ -229,7 +229,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#D5DFE8] p-2 sm:p-5 lg:p-7 flex flex-col justify-center font-sans antialiased text-[#18191E]">
+    <div className="min-h-screen bg-[#D5DFE8] p-0 sm:p-5 lg:p-7 flex flex-col justify-center font-sans antialiased text-[#18191E]">
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed top-5 right-5 z-50 p-3.5 rounded-2xl bg-[#18191E] text-white shadow-2xl flex items-center gap-2.5 text-xs max-w-md animate-fadeIn border border-white/10">
@@ -239,7 +239,7 @@ export function App() {
       )}
 
       {/* Learnify Master Tablet Frame */}
-      <div className="learnify-frame max-w-[1440px] w-full mx-auto min-h-[92vh] flex flex-row overflow-hidden">
+      <div className="learnify-frame max-w-[1440px] w-full mx-auto min-h-screen sm:min-h-[92vh] flex flex-row overflow-hidden">
         {/* Left Vertical Dark Sidebar */}
         <Sidebar
           activeTab={activeTab}
@@ -251,7 +251,7 @@ export function App() {
         />
 
         {/* Right White Main Workspace */}
-        <div className="flex-1 flex flex-col min-w-0 bg-white">
+        <div className="flex-1 flex flex-col min-w-0 bg-white min-h-screen sm:min-h-0">
           <TopHeader
             activeTab={activeTab}
             setActiveTab={handleTabChange}
@@ -262,7 +262,7 @@ export function App() {
           />
 
           {/* Main Content Area */}
-          <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
+          <main className="flex-1 p-3.5 sm:p-6 lg:p-8 overflow-y-auto">
         {loading && (
           <div className="py-24 text-center space-y-3">
             <Loader2 className="w-8 h-8 text-indigo-500 animate-spin mx-auto" />
