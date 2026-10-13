@@ -53,7 +53,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigateToTracks }) => {
       quote: 'Great software eliminates doubt. When learners have honest feedback, their growth becomes unstoppable.'
     },
     {
-      name: 'Sumra Shar',
+      name: 'Sumera Shar',
       role: 'Co-Founder & Creative Product Lead',
       tag: 'Design & Interaction',
       cardClass: 'card-pastel-sky',
@@ -61,7 +61,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigateToTracks }) => {
       emoji: '👩‍🎨',
       superpower: 'Creative Intuition & Delightful UX',
       shortIntro:
-        'A creative technologist who sees software as a canvas for human emotion and joy. Sumra believes learning tools should never feel cold or sterile. She shaped PathPilot’s welcoming Ronas IT design language, crafted Pip the cute mascot buddy, and engineered the fluid animations that make studying feel like a playful adventure.',
+        'A creative technologist who sees software as a canvas for human emotion and joy. Sumera believes learning tools should never feel cold or sterile. She shaped PathPilot’s welcoming Ronas IT design language, crafted Pip the cute mascot buddy, and engineered the fluid animations that make studying feel like a playful adventure.',
       drivingPassion:
         'Transforming daunting career milestones into friendly, joyful moments that keep students motivated day after day.',
       interests: ['Interaction Design', 'Micro-Animations', 'Cognitive Ergonomics', 'Creative Frontend'],
@@ -105,7 +105,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigateToTracks }) => {
         </h1>
 
         <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-          We are three university innovators—Sobia, Hassan, and Sumra—who came together with one shared dream: to make navigating tech careers honest, accessible, and delightful for everyone.
+          We are three university innovators—Sobia, Hassan, and Sumera—who came together with one shared dream: to make navigating tech careers honest, accessible, and delightful for everyone.
         </p>
       </div>
 
@@ -117,7 +117,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigateToTracks }) => {
         <div className="space-y-1 text-center md:text-left flex-1">
           <h2 className="text-lg font-black text-[#18191E]">The Story Behind PathPilot</h2>
           <p className="text-xs text-slate-600 leading-relaxed">
-            As students ourselves, we were exhausted by confusing job descriptions that demand 5 years of experience for entry-level roles, disconnected online courses, and generic tips. We asked: <em>What if career intelligence felt like a trusted mentor walking beside you?</em> Sobia’s AI strategy, Hassan’s data logic, and Sumra’s design intuition merged into PathPilot—your transparent companion from Day 1 to your first offer letter.
+            As students ourselves, we were exhausted by confusing job descriptions that demand 5 years of experience for entry-level roles, disconnected online courses, and generic tips. We asked: <em>What if career intelligence felt like a trusted mentor walking beside you?</em> Sobia’s AI strategy, Hassan’s data logic, and Sumera’s design intuition merged into PathPilot—your transparent companion from Day 1 to your first offer letter.
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
@@ -258,7 +258,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ onNavigateToTracks }) => {
           <div>
             <h3 className="text-base font-black text-[#18191E]">Questions? Pip is Here to Guide You!</h3>
             <p className="text-xs text-slate-800 leading-snug mt-0.5">
-              Sobia, Hassan, and Sumra created Pip so you always have a friendly tutor ready to chat in <strong>English</strong>, <strong>اردو</strong>, or <strong>Roman Urdu</strong>!
+              Sobia, Hassan, and Sumera created Pip so you always have a friendly tutor ready to chat in <strong>English</strong>, <strong>اردو</strong>, or <strong>Roman Urdu</strong>!
             </p>
           </div>
         </div>

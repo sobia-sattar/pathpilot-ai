@@ -390,7 +390,7 @@ export function App() {
               </button>
             </div>
             <div className="text-[11px] text-slate-400">
-              Built with precision by Sobia Sattar, Muhammad Hassan & Sumra Shar.
+              Built with precision by Sobia Sattar, Muhammad Hassan & Sumera Shar.
             </div>
           </footer>
         </div>

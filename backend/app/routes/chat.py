@@ -61,12 +61,12 @@ async def chat_with_pip(
         lang = "urdu"
         
         # Team / Creators inquiry in Urdu
-        if any(w in raw_msg for w in ["کس نے بنایا", "ٹیم", "سازندہ", "بانی", "ثوبیہ", "حسن", "سمرا"]):
+        if any(w in raw_msg for w in ["کس نے بنایا", "ٹیم", "سازندہ", "بانی", "ثوبیہ", "حسن", "سمیرا", "سمرا"]):
             reply = (
                 f"پاتھ پائلٹ (PathPilot) کو تین باصلاحیت طلباء نے پیار اور لگن سے بنایا ہے! 🌟\n\n"
                 f"👩‍💻 **ثوبیہ ستار (Sobia Sattar)** — پروجیکٹ لیڈ اور AI سسٹمز آرکیٹیکٹ\n"
                 f"👨‍💻 **محمد حسن (Muhammad Hassan)** — ڈیٹا انجینئرنگ اور بیک اینڈ انٹیلیجنس لیڈ\n"
-                f"👩‍🎨 **سمرا شار (Sumra Shar)** — لیڈ ڈیزائنر اور کری ایٹو پروڈکٹ انجینئر\n\n"
+                f"👩‍🎨 **سمیرا شار (Sumera Shar)** — لیڈ ڈیزائنر اور کری ایٹو پروڈکٹ انجینئر\n\n"
                 f"آپ اوپر نیویگیشن میں **'Our Team'** پر کلک کر کے ان کے بارے میں مزید پڑھ سکتے ہیں! 🐾"
             )
             suggestions = [
@@ -169,12 +169,12 @@ async def chat_with_pip(
         lang = "roman_urdu"
 
         # Team / Creators inquiry in Roman Urdu
-        if any(w in user_msg for w in ["kis ne banaya", "kisne banaya", "team", "creator", "founders", "sobia", "hassan", "sumra"]):
+        if any(w in user_msg for w in ["kis ne banaya", "kisne banaya", "team", "creator", "founders", "sobia", "hassan", "sumera", "sumra"]):
             reply = (
                 f"PathPilot ko 3 passionate university students ne banaya hai! 🌟👩‍💻👨‍💻👩‍🎨\n\n"
                 f"• **Sobia Sattar** — Co-Founder & AI Systems Lead\n"
                 f"• **Muhammad Hassan** — Co-Founder & Data Intelligence Lead\n"
-                f"• **Sumra Shar** — Co-Founder & Creative Product Lead\n\n"
+                f"• **Sumera Shar** — Co-Founder & Creative Product Lead\n\n"
                 f"Unho ne yeh platform is liye banaya taake har student ko clear roadmap aur transparent career advice mil sakay! Left sidebar mein **'Our Team'** tab par click kar ke un ka pura story parhein! 🐾"
             )
             suggestions = [
@@ -310,12 +310,12 @@ async def chat_with_pip(
         lang = "english"
 
         # Team / Creators inquiry in English
-        if any(w in user_msg for w in ["who made", "who built", "who created", "created", "creator", "creators", "founders", "team", "developed", "developers", "sobia", "hassan", "sumra"]):
+        if any(w in user_msg for w in ["who made", "who built", "who created", "created", "creator", "creators", "founders", "team", "developed", "developers", "sobia", "hassan", "sumera", "sumra"]):
             reply = (
                 f"PathPilot was created with passion by an ambitious trio of student founders! 🌟\n\n"
                 f"👩‍💻 **Sobia Sattar** — Co-Founder & AI Systems Lead\n"
                 f"👨‍💻 **Muhammad Hassan** — Co-Founder & Data Intelligence Lead\n"
-                f"👩‍🎨 **Sumra Shar** — Co-Founder & Creative Product Lead\n\n"
+                f"👩‍🎨 **Sumera Shar** — Co-Founder & Creative Product Lead\n\n"
                 f"They united AI architecture, data engineering, and human-centered design to eliminate career confusion for aspiring engineers. Click the **'Our Team'** tab in the sidebar to read their full story! 🐾"
             )
             suggestions = [

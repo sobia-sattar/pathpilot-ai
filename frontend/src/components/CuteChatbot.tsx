@@ -116,10 +116,10 @@ export const CuteChatbot: React.FC<CuteChatbotProps> = ({
       let fallbackReply = `I'm here with you! For **${targetRole}**, focusing on your active milestone will boost your readiness score past ${readinessScore}%! 🦊✨`;
       
       // Creators inquiry fallback
-      if (/who made|creators|founders|team|sobia|hassan|sumra/.test(lower)) {
-        fallbackReply = `PathPilot was created with passion by **Sobia Sattar** (AI Systems Lead), **Muhammad Hassan** (Data Intelligence Lead), and **Sumra Shar** (Creative Product Lead)! Click **'Our Team'** in the navigation to read our story! 🌟👩‍💻👨‍💻👩‍🎨`;
+      if (/who made|creators|founders|team|sobia|hassan|sumera|sumra/.test(lower)) {
+        fallbackReply = `PathPilot was created with passion by **Sobia Sattar** (AI Systems Lead), **Muhammad Hassan** (Data Intelligence Lead), and **Sumera Shar** (Creative Product Lead)! Click **'Our Team'** in the navigation to read our story! 🌟👩‍💻👨‍💻👩‍🎨`;
       } else if (/kis ne|kisne|team|founders/.test(lower) && isRoman) {
-        fallbackReply = `PathPilot ko **Sobia Sattar**, **Muhammad Hassan**, aur **Sumra Shar** ne banaya hai! Navigation mein **'Our Team'** par click karein aur hamari journey dekhein! 🐾🌟`;
+        fallbackReply = `PathPilot ko **Sobia Sattar**, **Muhammad Hassan**, aur **Sumera Shar** ne banaya hai! Navigation mein **'Our Team'** par click karein aur hamari journey dekhein! 🐾🌟`;
       } else if (isUrdu) {
         fallbackReply = `میں آپ کی رہنمائی کے لیے حاضر ہوں! **${targetRole}** کے لیے روڈ میپ کے ویڈیو لیکچرز مکمل کریں تاکہ آپ کا اسکور بڑھ سکے! 🚀`;
       } else if (isRoman) {

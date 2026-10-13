@@ -108,7 +108,7 @@ def create_presentation():
     fp1.font.color.rgb = AMBER
 
     fp2 = ftf.add_paragraph()
-    fp2.text = "👩‍💻 Sobia Sattar (AI Systems Lead)   •   👨‍💻 Muhammad Hassan (Data Systems Lead)   •   👩‍🎨 Sumra Shar (Creative Product Lead)"
+    fp2.text = "👩‍💻 Sobia Sattar (AI Systems Lead)   •   👨‍💻 Muhammad Hassan (Data Systems Lead)   •   👩‍🎨 Sumera Shar (Creative Product Lead)"
     fp2.font.size = Pt(14)
     fp2.font.bold = True
     fp2.font.color.rgb = WHITE
@@ -234,8 +234,8 @@ def create_presentation():
         ("👨‍💻 Muhammad Hassan", "Co-Founder & Data Intelligence Lead", "Deep Systems Logic & Analytical Truth",
          "An analytical problem solver driven to eliminate guesswork. Hassan built the data engines and deterministic roadmap generators that ensure every metric is explainable and rock-solid.",
          LAVENDER),
-        ("👩‍🎨 Sumra Shar", "Co-Founder & Creative Product Lead", "Creative Intuition & Delightful UX",
-         "Believes learning tools should spark joy. Sumra crafted the signature Ronas IT pastel design system, Pip the cute mascot, and fluid animations that make planning feel playful.",
+        ("👩‍🎨 Sumera Shar", "Co-Founder & Creative Product Lead", "Creative Intuition & Delightful UX",
+         "Believes learning tools should spark joy. Sumera crafted the signature Ronas IT pastel design system, Pip the cute mascot, and fluid animations that make planning feel playful.",
          SKY)
     ]
     fw = Inches(3.45)

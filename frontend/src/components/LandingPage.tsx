@@ -406,7 +406,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               <Sparkles className="w-3.5 h-3.5" />
               <span>Team PathPilot</span>
             </div>
-            <h3 className="text-lg font-bold text-white">Created by Sobia Sattar, Muhammad Hassan & Sumra Shar</h3>
+            <h3 className="text-lg font-bold text-white">Created by Sobia Sattar, Muhammad Hassan & Sumera Shar</h3>
             <p className="text-xs text-slate-400">Discover our AI architecture, data engineering systems, and human-centered design approach.</p>
           </div>
           <button
