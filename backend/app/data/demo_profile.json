@@ -1,0 +1,103 @@
+{
+  "id": "alex_morgan_demo",
+  "name": "Alex Morgan",
+  "email": "alex.morgan@university.edu",
+  "headline": "Junior Computer Science Student | Aspiring AI/ML Engineer",
+  "skills": [
+    {
+      "name": "Python",
+      "normalized_name": "Python",
+      "category": "Programming Languages",
+      "proficiency": 2,
+      "evidence": "Implemented data cleaning scripts and exploratory analysis notebooks in Python across university coursework.",
+      "confidence": 0.90,
+      "is_inferred": false,
+      "user_confirmed": true
+    },
+    {
+      "name": "SQL",
+      "normalized_name": "SQL",
+      "category": "Databases & Querying",
+      "proficiency": 2,
+      "evidence": "Wrote relational queries, joins, and aggregations for the Campus Library Database coursework project.",
+      "confidence": 0.88,
+      "is_inferred": false,
+      "user_confirmed": true
+    },
+    {
+      "name": "Statistics & Probability",
+      "normalized_name": "Statistics & Probability",
+      "category": "Mathematics & Foundations",
+      "proficiency": 2,
+      "evidence": "Completed coursework in probability distributions, hypothesis testing, and regression analysis (Grade: A).",
+      "confidence": 0.85,
+      "is_inferred": true,
+      "user_confirmed": true
+    },
+    {
+      "name": "Machine Learning",
+      "normalized_name": "Machine Learning",
+      "category": "AI & Machine Learning",
+      "proficiency": 1,
+      "evidence": "Implemented introductory linear regression and k-nearest neighbors in academic laboratory exercises.",
+      "confidence": 0.78,
+      "is_inferred": false,
+      "user_confirmed": true
+    },
+    {
+      "name": "Data Visualization",
+      "normalized_name": "Data Visualization",
+      "category": "Data Engineering & Analytics",
+      "proficiency": 2,
+      "evidence": "Generated charts and scatter plots using Matplotlib and Seaborn for student performance data analysis.",
+      "confidence": 0.85,
+      "is_inferred": false,
+      "user_confirmed": true
+    },
+    {
+      "name": "Git & GitHub",
+      "normalized_name": "Git & GitHub",
+      "category": "Software Engineering & Tools",
+      "proficiency": 2,
+      "evidence": "Used Git for team version control and repository management across 3 computer science class projects.",
+      "confidence": 0.82,
+      "is_inferred": false,
+      "user_confirmed": true
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "State University",
+      "year": "2023 - 2026 (Expected)",
+      "coursework": [
+        "Data Structures and Algorithms",
+        "Introduction to Machine Learning",
+        "Relational Database Systems",
+        "Probability and Statistics",
+        "Linear Algebra"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Student Academic Performance Analysis",
+      "description": "Conducted exploratory data analysis on a demographic dataset of 1,000 students. Utilized Pandas for cleaning and Matplotlib for distribution plots; trained a baseline linear regression model.",
+      "technologies": ["Python", "Pandas", "Matplotlib", "Machine Learning"]
+    },
+    {
+      "title": "Campus Library Database & Reservation System",
+      "description": "Designed 3NF normalized relational schema for university book inventory. Authored complex SQL queries with indexing to analyze peak borrowing periods.",
+      "technologies": ["SQL", "Relational Database", "Python"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Undergraduate Teaching Assistant - Intro to CS",
+      "company": "State University Department of Computer Science",
+      "duration": "Sept 2025 - Present",
+      "description": "Conducted weekly lab sessions for 40 freshman students teaching Python syntax, recursion, and debugging techniques."
+    }
+  ],
+  "raw_text": "Alex Morgan\nEmail: alex.morgan@university.edu | GitHub: github.com/alex-morgan\n\nOBJECTIVE\nMotivated junior computer science student seeking an internship or entry-level role in Machine Learning and Data Engineering.\n\nEDUCATION\nBachelor of Science in Computer Science | State University\nExpected Graduation: May 2026 | GPA: 3.7/4.0\nRelevant Coursework: Data Structures & Algorithms, Intro to Machine Learning, Database Systems, Linear Algebra, Statistics & Probability.\n\nTECHNICAL SKILLS\nLanguages: Python, SQL\nLibraries & Tools: Pandas, Matplotlib, Git, GitHub\nFoundations: Data Cleaning, Exploratory Data Analysis, Linear Regression, Basic Statistics\n\nPROJECTS\nStudent Academic Performance Analysis\n• Cleaned tabular demographic dataset of 1,000 student records using Pandas and Numpy\n• Plotted exploratory charts using Matplotlib to assess study hour correlations\n• Trained an introductory baseline regression model to predict exam grades\n\nCampus Library Database System\n• Designed normalized relational database schema with tables for inventory, patrons, and checkouts\n• Wrote SQL join queries and group-by aggregations for inventory status reports\n\nEXPERIENCE\nUndergraduate Teaching Assistant | State University (Sept 2025 - Present)\n• Assisted 40+ students in introductory Python programming labs and assignments"
+}

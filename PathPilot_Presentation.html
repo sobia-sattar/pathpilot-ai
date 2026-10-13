@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathPilot AI — Project Presentation Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --canvas: #D5DFE8;
+      --charcoal: #18191E;
+      --white: #FFFFFF;
+      --yellow: #FEE883;
+      --yellow-accent: #FFD233;
+      --lavender: #E0D4FD;
+      --sky: #BAE6FD;
+      --coral: #FF5B37;
+      --muted: #64748B;
+      --border: #E2E8F0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+    body {
+      background-color: var(--canvas);
+      color: var(--charcoal);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+    .deck-container {
+      width: 100%;
+      max-width: 1180px;
+      aspect-ratio: 16 / 9;
+      background: var(--white);
+      border-radius: 36px;
+      box-shadow: 0 30px 70px -15px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(226, 232, 240, 0.9);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 48px 56px;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .slide.active {
+      display: flex;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.99); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background-color: var(--yellow);
+      color: var(--charcoal);
+      width: fit-content;
+    }
+    .badge-lavender { background-color: var(--lavender); }
+    .badge-sky { background-color: var(--sky); }
+    .badge-coral { background-color: var(--coral); color: white; }
+
+    h1 { font-size: 44px; font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; }
+    h2 { font-size: 32px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+    h3 { font-size: 18px; font-weight: 800; }
+    p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+    /* Bento Cards */
+    .bento-grid {
+      display: grid;
+      gap: 20px;
+      width: 100%;
+      margin-top: 24px;
+    }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .bento-card {
+      padding: 24px;
+      border-radius: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .bento-card:hover { transform: translateY(-3px); }
+    .card-yellow { background-color: var(--yellow); color: var(--charcoal); }
+    .card-lavender { background-color: var(--lavender); color: var(--charcoal); }
+    .card-sky { background-color: var(--sky); color: var(--charcoal); }
+    .card-dark { background-color: var(--charcoal); color: var(--white); }
+    .card-dark p { color: #94A3B8; }
+
+    /* Controls Bar */
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1180px;
+      margin-top: 18px;
+      padding: 0 12px;
+    }
+    .nav-btn {
+      background: var(--charcoal);
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .nav-btn:hover { background: #000; transform: scale(1.02); }
+    .counter { font-size: 13px; font-weight: 800; color: var(--charcoal); }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .controls { display: none; }
+      .deck-container { aspect-ratio: auto; box-shadow: none; border-radius: 0; }
+      .slide { display: flex !important; page-break-after: always; height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="deck-container">
+
+    <!-- SLIDE 1: TITLE SLIDE -->
+    <div class="slide active">
+      <div>
+        <span class="badge">✨ AI CAREER NAVIGATOR</span>
+        <h1 style="margin-top: 14px;">PathPilot <span style="color: var(--coral);">AI</span></h1>
+        <p style="font-size: 18px; font-weight: 700; color: var(--coral); margin-top: 4px;">
+          Your Personalized AI Career & Skill Navigator
+        </p>
+        <p style="font-size: 15px; margin-top: 8px; max-width: 680px;">
+          Transforming career confusion into an inspiring, step-by-step journey with transparent mathematics and zero guesswork.
+        </p>
+      </div>
+
+      <div class="bento-card card-dark" style="padding: 22px 28px;">
+        <span style="color: var(--yellow-accent); font-size: 11px; font-weight: 800; letter-spacing: 0.5px;">
+          FOUNDED & ENGINEERED BY TEAM PATHPILOT
+        </span>
+        <div style="font-size: 15px; font-weight: 800; color: white; margin-top: 6px;">
+          👩‍💻 Sobia Sattar (AI Systems Lead) &nbsp;•&nbsp; 👨‍💻 Muhammad Hassan (Data Systems Lead) &nbsp;•&nbsp; 👩‍🎨 Sumra Shar (Creative Product Lead)
+        </div>
+        <p style="font-size: 12px; margin-top: 4px; color: #CBD5E1;">
+          Featuring Pip the Cute Multilingual Buddy  |  Built with Python 3.14, FastAPI, React & Vite
+        </p>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: THE REAL PROBLEM -->
+    <div class="slide">
+      <div>
+        <span class="badge badge-lavender">THE CHALLENGE</span>
+        <h2 style="margin-top: 10px;">Why Do Tech Careers Feel So Overwhelming?</h2>
+        <p>Students face three major roadblocks when trying to launch their engineering careers.</p>
+      </div>
+      <div class="bento-grid grid-3">
+        <div class="bento-card card-yellow">
+          <div style="font-size: 24px; font-weight: 900;">01</div>
+          <div style="margin-top: 16px;">
+            <h3>Confusing Job Specs</h3>
+            <p style="color: var(--charcoal); margin-top: 6px;">
+              Entry-level postings asking for 5+ years of experience and 20 different technologies with zero indication of what's truly essential.
+            </p>
+          </div>
+        </div>
+        <div class="bento-card card-lavender">
+          <div style="font-size: 24px; font-weight: 900;">02</div>
+          <div style="margin-top: 16px;">
+            <h3>No Personal Direction</h3>
+            <p style="color: var(--charcoal); margin-top: 6px;">
+              Online courses give generic advice. Learners waste months studying random topics without knowing their exact missing gaps.
+            </p>
+          </div>
+        </div>
+        <div class="bento-card card-sky">
+          <div style="font-size: 24px; font-weight: 900;">03</div>
+          <div style="margin-top: 16px;">
+            <h3>Robotic & Cold Audits</h3>
+            <p style="color: var(--charcoal); margin-top: 6px;">
+              Existing evaluation tools feel clinical and discouraging, displaying red error codes rather than helpful, friendly guidance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: OUR SOLUTION -->
+    <div class="slide">
+      <div>
+        <span class="badge badge-sky">OUR SOLUTION</span>
+        <h2 style="margin-top: 10px;">PathPilot AI: A Friendly, Honest Companion</h2>
+        <p>A student-first platform designed to replace career anxiety with clarity and confidence.</p>
+      </div>
+      <div class="bento-grid grid-2">
+        <div class="bento-card card-yellow" style="padding: 20px;">
+          <h3>🎯 Accurate Skill Scanner</h3>
+          <p style="color: var(--charcoal); margin-top: 4px;">
+            Extracts real competencies from your resume with PyMuPDF. Zero hallucinations with 100% student confirmation control.
+          </p>
+        </div>
+        <div class="bento-card card-lavender" style="padding: 20px;">
+          <h3>📊 Interactive Growth Map</h3>
+          <p style="color: var(--charcoal); margin-top: 4px;">
+            Visualizes your level (0 to 4) against industry standards. 1-click level adjustments make updating effortless.
+          </p>
+        </div>
+        <div class="bento-card card-sky" style="padding: 20px;">
+          <h3>🗺️ Dynamic 4-Phase Roadmap</h3>
+          <p style="color: var(--charcoal); margin-top: 4px;">
+            Video lectures, milestone projects, and live code sandbox practice calibrated to your weekly study pace.
+          </p>
+        </div>
+        <div class="bento-card card-yellow" style="padding: 20px;">
+          <h3>🦊 Pip: Multilingual AI Buddy</h3>
+          <p style="color: var(--charcoal); margin-top: 4px;">
+            A cute mascot ready 24/7 to answer queries and explain concepts in English, Urdu (اردو), or Roman Urdu.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: MEET THE FOUNDERS -->
+    <div class="slide">
+      <div>
+        <span class="badge">TEAM PATHPILOT</span>
+        <h2 style="margin-top: 10px;">Meet the Creators: Crafted with Passion & Purpose</h2>
+        <p>Three university innovators combining AI strategy, data systems, and creative design.</p>
+      </div>
+      <div class="bento-grid grid-3">
+        <div class="bento-card card-yellow">
+          <div>
+            <div style="font-size: 28px;">👩‍💻</div>
+            <h3 style="margin-top: 8px;">Sobia Sattar</h3>
+            <div style="font-size: 11px; font-weight: 800; color: #B45309;">Co-Founder & AI Systems Lead</div>
+            <div style="font-size: 11px; font-weight: 800; color: var(--coral); margin-top: 4px;">✨ Strategic Vision & AI Empathy</div>
+          </div>
+          <p style="color: var(--charcoal); font-size: 12px; margin-top: 10px;">
+            "Envisioned PathPilot as an intelligent, empathetic compass that translates confusing market requirements into confident next steps."
+          </p>
+        </div>
+        <div class="bento-card card-lavender">
+          <div>
+            <div style="font-size: 28px;">👨‍💻</div>
+            <h3 style="margin-top: 8px;">Muhammad Hassan</h3>
+            <div style="font-size: 11px; font-weight: 800; color: #6D28D9;">Co-Founder & Data Intelligence Lead</div>
+            <div style="font-size: 11px; font-weight: 800; color: var(--coral); margin-top: 4px;">✨ Systems Logic & Analytical Truth</div>
+          </div>
+          <p style="color: var(--charcoal); font-size: 12px; margin-top: 10px;">
+            "Built the data engines and deterministic roadmap generators that ensure every metric is explainable and rock-solid."
+          </p>
+        </div>
+        <div class="bento-card card-sky">
+          <div>
+            <div style="font-size: 28px;">👩‍🎨</div>
+            <h3 style="margin-top: 8px;">Sumra Shar</h3>
+            <div style="font-size: 11px; font-weight: 800; color: #0369A1;">Co-Founder & Creative Product Lead</div>
+            <div style="font-size: 11px; font-weight: 800; color: var(--coral); margin-top: 4px;">✨ Creative Intuition & Delightful UX</div>
+          </div>
+          <p style="color: var(--charcoal); font-size: 12px; margin-top: 10px;">
+            "Crafted the signature Ronas IT pastel design system, Pip the cute mascot, and fluid animations that make learning joyful."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: RESUME SCANNER -->
+    <div class="slide">
+      <div>
+        <span class="badge badge-lavender">FEATURE 01</span>
+        <h2 style="margin-top: 10px;">Resume & Experience Scanner</h2>
+        <p>Precision feature extraction with complete student review control.</p>
+      </div>
+      <div class="bento-grid grid-2">
+        <div class="bento-card card-yellow">
+          <h3>How It Works:</h3>
+          <ul style="margin-top: 14px; font-size: 13px; line-height: 1.8; padding-left: 20px; color: var(--charcoal);">
+            <li><strong>Upload PDF:</strong> Ingest any standard text resume or paste raw bio text.</li>
+            <li><strong>PyMuPDF Engine:</strong> Extracts technical skills, frameworks, and education.</li>
+            <li><strong>Alias Normalizer:</strong> Matches variations (e.g., "JS" = "JavaScript").</li>
+            <li><strong>100% Privacy:</strong> Session-isolated storage with zero external sharing.</li>
+          </ul>
+        </div>
+        <div class="bento-card card-dark">
+          <h3 style="color: white;">The Human Review Layer:</h3>
+          <ul style="margin-top: 14px; font-size: 13px; line-height: 1.8; padding-left: 20px; color: #E2E8F0;">
+            <li><strong>Zero Hallucinations:</strong> Never fabricates skills you didn't possess.</li>
+            <li><strong>1-Tap Verification:</strong> Add, edit, or remove skills with one click.</li>
+            <li><strong>Transparent Evidence:</strong> See exact sentences from your resume.</li>
+            <li><strong>Confidence:</strong> Your learning roadmap is grounded in reality.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: SKILL COMPASS -->
+    <div class="slide">
+      <div>
+        <span class="badge badge-sky">FEATURE 02</span>
+        <h2 style="margin-top: 10px;">Interactive Skill Compass & Growth Map</h2>
+        <p>De-cluttered, beautiful Bento cards that replace overwhelming compliance audits.</p>
+      </div>
+      <div class="bento-grid grid-2">
+        <div class="bento-card card-yellow" style="padding: 22px;">
+          <h3>🎨 Compact Bento Cards</h3>
+          <p style="color: var(--charcoal); margin-top: 6px;">
+            Organized with soft pastel badges, clear category tags, and priority labels instead of giant bureaucratic alert boxes.
+          </p>
+        </div>
+        <div class="bento-card card-lavender" style="padding: 22px;">
+          <h3>📏 Unified 4-Segment Gauge</h3>
+          <p style="color: var(--charcoal); margin-top: 6px;">
+            Clear visual stepper showing: Current Level ➔ Target Requirement (e.g., Level 0 of 3 needed) in a single clean glance.
+          </p>
+        </div>
+        <div class="bento-card card-sky" style="padding: 22px;">
+          <h3>⚡ 1-Click Level Setter</h3>
+          <p style="color: var(--charcoal); margin-top: 6px;">
+            Click [0] [1] [2] [3] [4] directly on any skill card to self-calibrate your competency and update your score instantly.
+          </p>
+        </div>
+        <div class="bento-card card-yellow" style="padding: 22px;">
+          <h3>💡 Positive Growth Tips</h3>
+          <p style="color: var(--charcoal); margin-top: 6px;">
+            Encouraging, actionable tips (e.g. "Core foundation to master Level 3") instead of alarming red warnings.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: ROADMAP & WORKSHOP -->
+    <div class="slide">
+      <div>
+        <span class="badge">FEATURE 03</span>
+        <h2 style="margin-top: 10px;">Personalized 4-Phase Learning Roadmap</h2>
+        <p>Sequenced milestones mapped directly to real hiring benchmarks.</p>
+      </div>
+      <div class="bento-grid grid-4" style="margin-top: 14px;">
+        <div class="bento-card card-yellow" style="padding: 16px;">
+          <div style="font-size: 11px; font-weight: 800;">PHASE 01</div>
+          <div style="font-weight: 800; margin-top: 4px;">Foundations</div>
+          <div style="font-size: 11px; color: var(--charcoal); margin-top: 4px;">Syntax & Core Principles</div>
+        </div>
+        <div class="bento-card card-lavender" style="padding: 16px;">
+          <div style="font-size: 11px; font-weight: 800;">PHASE 02</div>
+          <div style="font-weight: 800; margin-top: 4px;">Architecture</div>
+          <div style="font-size: 11px; color: var(--charcoal); margin-top: 4px;">Pipelines & Backend Serving</div>
+        </div>
+        <div class="bento-card card-sky" style="padding: 16px;">
+          <div style="font-size: 11px; font-weight: 800;">PHASE 03</div>
+          <div style="font-weight: 800; margin-top: 4px;">Optimization</div>
+          <div style="font-size: 11px; color: var(--charcoal); margin-top: 4px;">Scaling & Testing Metrics</div>
+        </div>
+        <div class="bento-card card-yellow" style="padding: 16px;">
+          <div style="font-size: 11px; font-weight: 800;">PHASE 04</div>
+          <div style="font-weight: 800; margin-top: 4px;">Deliverable</div>
+          <div style="font-size: 11px; color: var(--charcoal); margin-top: 4px;">Production Portfolio Project</div>
+        </div>
+      </div>
+      <div class="bento-card card-dark" style="margin-top: 16px; padding: 20px 24px;">
+        <span style="color: var(--yellow-accent); font-size: 11px; font-weight: 800;">BUILT-IN WORKSHOP & STUDY INTEGRITY GATES</span>
+        <p style="color: #E2E8F0; font-size: 13px; margin-top: 4px;">
+          • <strong>Playable Video Player:</strong> Curated milestone lectures with timestamped syllabus.<br>
+          • <strong>Live Code Sandbox:</strong> Practice Python and PyTorch code with in-browser test assertions.<br>
+          • <strong>Anti-Skip Gate:</strong> Prevents completing milestones without verified studying or lab testing!
+        </p>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: PIP THE CHATBOT -->
+    <div class="slide">
+      <div>
+        <span class="badge badge-coral">FEATURE 04</span>
+        <h2 style="margin-top: 10px;">Meet Pip: Your Multilingual AI Buddy 🦊</h2>
+        <p>A cheerful learning coach embedded directly into your career workspace.</p>
+      </div>
+      <div class="bento-grid grid-2">
+        <div class="bento-card card-yellow" style="padding: 22px;">
+          <h3>🐾 Cute Mascot Persona</h3>
+          <p style="color: var(--charcoal); margin-top: 6px;">
+            Student headphones, blushing cheeks, and pulsing status badge. Automatically pops up to say hello and offer study assistance.
+          </p>
+        </div>
+        <div class="bento-card card-lavender" style="padding: 22px;">
+          <h3>🗣️ Trilingual Intelligence</h3>
+          <p style="color: var(--charcoal); margin-top: 6px;">
+            Understands and responds fluently in <strong>English</strong>, <strong>Urdu (اردو)</strong> with full RTL formatting, and <strong>Roman Urdu</strong>.
+          </p>
+        </div>
+        <div class="bento-card card-sky" style="padding: 22px;">
+          <h3>🧠 High-Accuracy Explanations</h3>
+          <p style="color: var(--charcoal); margin-top: 6px;">
+            Explains complex ML/data engineering concepts (Gradient Descent, Overfitting, SQL Joins, React hooks) in simple, accessible terms.
+          </p>
+        </div>
+        <div class="bento-card card-yellow" style="padding: 22px;">
+          <h3>💡 Role-Aware Coaching</h3>
+          <p style="color: var(--charcoal); margin-top: 6px;">
+            Knows your active role, readiness score, and top gaps. Provides customized interview questions and daily motivation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: ARCHITECTURE & TECH STACK -->
+    <div class="slide">
+      <div>
+        <span class="badge badge-lavender">ENGINEERING</span>
+        <h2 style="margin-top: 10px;">Modern, Resilient & Scalable Tech Stack</h2>
+        <p>Built with modern industry standards for high performance and reliability.</p>
+      </div>
+      <div class="bento-grid grid-4" style="margin-top: 18px;">
+        <div class="bento-card card-yellow" style="padding: 20px;">
+          <h3>Frontend</h3>
+          <p style="color: var(--charcoal); font-size: 12px; margin-top: 8px;">
+            • React 19 & TypeScript<br>
+            • Vite Build Engine<br>
+            • TailwindCSS v4<br>
+            • Ronas IT Pastel System
+          </p>
+        </div>
+        <div class="bento-card card-lavender" style="padding: 20px;">
+          <h3>Backend</h3>
+          <p style="color: var(--charcoal); font-size: 12px; margin-top: 8px;">
+            • FastAPI & Python 3.14<br>
+            • Async Endpoints<br>
+            • Deterministic Gap Math<br>
+            • 13/13 Pytest Tests Pass
+          </p>
+        </div>
+        <div class="bento-card card-sky" style="padding: 20px;">
+          <h3>Data & AI</h3>
+          <p style="color: var(--charcoal); font-size: 12px; margin-top: 8px;">
+            • SQLite Multi-User DB<br>
+            • PyMuPDF Extraction<br>
+            • TF-IDF Semantic Match<br>
+            • DAG Prerequisite Trees
+          </p>
+        </div>
+        <div class="bento-card card-yellow" style="padding: 20px;">
+          <h3>Security</h3>
+          <p style="color: var(--charcoal); font-size: 12px; margin-top: 8px;">
+            • PBKDF2 Salt Hashing<br>
+            • Route Authentication<br>
+            • Study Verification Gates<br>
+            • 100% Student Privacy
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10: CONCLUSION -->
+    <div class="slide" style="background-color: var(--charcoal); color: white;">
+      <div>
+        <span class="badge">THE ROAD AHEAD</span>
+        <h1 style="color: white; margin-top: 18px;">Building Confidence, One Skill at a Time</h1>
+        <p style="font-size: 18px; color: var(--yellow-accent); margin-top: 8px; font-weight: 700;">
+          PathPilot replaces career anxiety with transparent, joyful, and verifiable growth.
+        </p>
+      </div>
+
+      <div class="bento-grid grid-3" style="margin-top: 24px;">
+        <div class="bento-card card-yellow" style="padding: 22px;">
+          <h3 style="color: var(--charcoal);">🌟 Humanized UI</h3>
+          <p style="color: var(--charcoal); font-size: 13px; margin-top: 6px;">
+            Ronas IT signature pastel cards, fluid transitions, and lovable Pip mascot.
+          </p>
+        </div>
+        <div class="bento-card card-lavender" style="padding: 22px;">
+          <h3 style="color: var(--charcoal);">🎯 Real-World Value</h3>
+          <p style="color: var(--charcoal); font-size: 13px; margin-top: 6px;">
+            Verified pathways for Junior AI/ML, Data Analyst, and Full-Stack tracks.
+          </p>
+        </div>
+        <div class="bento-card card-sky" style="padding: 22px;">
+          <h3 style="color: var(--charcoal);">🚀 Live & Verified</h3>
+          <p style="color: var(--charcoal); font-size: 13px; margin-top: 6px;">
+            Operational web application running live at http://127.0.0.1:5173.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 18px; font-size: 13px; color: #94A3B8;">
+        Thank you! Created with ❤️ by Sobia Sattar, Muhammad Hassan & Sumra Shar
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NAVIGATION CONTROLS -->
+  <div class="controls">
+    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+    <div class="counter" id="slideCounter">Slide 1 / 10</div>
+    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const counter = document.getElementById('slideCounter');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function updateSlide() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlide);
+      });
+      counter.textContent = `Slide ${currentSlide + 1} / ${slides.length}`;
+      prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+      prevBtn.style.pointerEvents = currentSlide === 0 ? 'none' : 'auto';
+      nextBtn.textContent = currentSlide === slides.length - 1 ? 'Finish 🏁' : 'Next →';
+    }
+
+    function changeSlide(direction) {
+      currentSlide = Math.max(0, Math.min(slides.length - 1, currentSlide + direction));
+      updateSlide();
+    }
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') changeSlide(1);
+      if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>

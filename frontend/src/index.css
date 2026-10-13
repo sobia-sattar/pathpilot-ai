@@ -1,0 +1,276 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --canvas-bg: #CBD5E1;
+    --app-white: #FFFFFF;
+    --sidebar-dark: #18191E;
+    --card-yellow: #FEE883;
+    --card-lavender: #E0D4FD;
+    --card-sky: #BAE6FD;
+    --coral-accent: #FF5B37;
+    --yellow-accent: #FFD233;
+    --text-primary: #18191E;
+    --text-muted: #64748B;
+    --border-light: #E2E8F0;
+  }
+
+  body {
+    background-color: #D5DFE8;
+    color: #18191E;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ========================================================
+   RONAS IT / LEARNIFY SIGNATURE DESIGN SYSTEM
+   ======================================================== */
+
+/* Outer App Frame (Tablet/Workspace aesthetic) */
+.learnify-frame {
+  background: #FFFFFF;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(226, 232, 240, 0.8);
+}
+
+@media (min-width: 640px) {
+  .learnify-frame {
+    border-radius: 36px;
+  }
+}
+
+/* Sidebar Dark Pill */
+.learnify-sidebar {
+  background: #18191E;
+}
+
+/* Signature Pastel Cards */
+.card-pastel-yellow {
+  background-color: #FEE883;
+  color: #18191E;
+  border-radius: 22px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-pastel-yellow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(254, 232, 131, 0.7);
+}
+
+.card-pastel-lavender {
+  background-color: #E0D4FD;
+  color: #18191E;
+  border-radius: 22px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-pastel-lavender:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(224, 212, 253, 0.7);
+}
+
+.card-pastel-sky {
+  background-color: #BAE6FD;
+  color: #18191E;
+  border-radius: 22px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-pastel-sky:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(186, 230, 253, 0.7);
+}
+
+.card-charcoal-dark {
+  background-color: #18191E;
+  color: #FFFFFF;
+  border-radius: 22px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-charcoal-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -10px rgba(24, 25, 30, 0.5);
+}
+
+/* Signature Buttons */
+.btn-coral {
+  background-color: #FF5B37;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 14px;
+  transition: all 0.15s ease-in-out;
+}
+.btn-coral:hover {
+  background-color: #EE4B27;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px -4px rgba(255, 91, 55, 0.45);
+}
+
+/* Active Nav Icon (Yellow rounded button with black icon) */
+.nav-icon-active {
+  background-color: #FFD233;
+  color: #18191E;
+  border-radius: 14px;
+}
+
+/* Category Filter Pills */
+.pill-filter-active {
+  background-color: #18191E;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 6px 18px;
+  font-size: 13px;
+}
+
+.pill-filter-inactive {
+  background-color: #FFFFFF;
+  color: #475569;
+  border: 1px solid #E2E8F0;
+  font-weight: 500;
+  border-radius: 9999px;
+  padding: 6px 18px;
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+.pill-filter-inactive:hover {
+  border-color: #18191E;
+  color: #18191E;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* ========================================================
+   FLUID ANIMATIONS & TRANSITIONS (LEARNIFY THEME)
+   ======================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 91, 55, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 91, 55, 0);
+  }
+}
+
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: floatGentle 3.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 2.5s ease-in-out infinite;
+}
+
+.animate-wiggle:hover {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+/* Page View Transition */
+.page-transition {
+  animation: fadeInUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* Smooth Interactive Card Hover */
+.card-hover-effect {
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08);
+}
+
